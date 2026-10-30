@@ -1,70 +1,85 @@
 # VGC-Assist
 
-**Meta-independent, explainable Pokémon team optimization system.**
+**An explainable, meta-independent Pokémon team optimization system.**
 
-VGC-Assist is an independent project exploring how role-based reasoning and constraint-driven optimization can help new players build structurally coherent competitive Pokémon teams. The goal is to explain *why* a Pokémon may help a particular team instead of relying primarily on usage statistics or opaque recommendations.
+VGC-Assist is an independent project designed to make competitive Pokémon team-building more accessible. It helps players construct and evaluate teams using role-based reasoning, team synergy, and constraint-driven optimization rather than relying primarily on usage statistics.
 
-## Status
+Its goal is not just to recommend Pokémon, but to explain why they complement a team and how they contribute to its overall structure.
 
-This is an early public project scaffold. The landing page and planning documents are included; the eight scoring functions, candidate optimizer, and finished team-builder interface are **not implemented yet**.
+## Features
 
-## Core functionality planned
+The interactive Base44 prototype includes:
 
-- **Build:** evaluate partially completed teams and suggest candidates.
-- **Score:** evaluate role coverage, defensive coverage, offensive coverage, speed structure, archetype coherence, win conditions, synergy, and balance/redundancy.
-- **Explain:** show why a recommendation helps and what trade-offs it introduces.
+- **Team Builder:** Select up to six Pokémon, view their sprites, types, stats, and abilities, and modify individual team slots.
+- **Team Optimization:** Fill empty team slots with recommended Pokémon.
+- **Team Evaluation:** Generate an overall team score and category-level evaluations.
+- **Type Coverage:** Examine offensive and defensive type matchups.
+- **Speed Analysis:** Evaluate speed tiers and speed-control options.
+- **Role and Synergy Analysis:** Examine role distribution, physical and special balance, and compatibility between teammates.
+- **Archetype Analysis:** Evaluate how well a team supports strategies such as Balance, Hyper Offense, and Trick Room.
+- **Threat Coverage:** Assess how well the team can address opposing threats.
+- **Recommendations:** Explain suggested additions and their contributions to team structure.
+- **Reference Charts:** Access type-effectiveness and Pokémon nature charts.
+- **Team Import:** Import an existing team for evaluation and further development.
 
-## Architecture
+## How It Works
 
-```text
-Objective Pokémon facts
-        ↓
-VGC-Assist interpretation layer
- roles · functions · archetype affinities
-        ↓
-Team-level relationships
-        ↓
-Eight scoring functions
-        ↓
-Candidate ranking + explanations
-```
+VGC-Assist separates objective Pokémon data from the competitive interpretations used to evaluate teams.
 
-## Files
+1. **Objective Data:** Pokémon types, base stats, abilities, and type matchups.
+2. **Interpretation Layer:** Assigns role strengths, functional attributes, and archetype affinities.
+3. **Team Analysis:** Evaluates individual Pokémon and relationships across the team.
+4. **Optimization:** Ranks potential additions based on their contributions to the existing team.
+5. **Explanations:** Presents the reasoning behind recommendations and identifies remaining weaknesses.
 
-- `index.html`, `style.css`, `script.js`: public project landing page.
-- `data/`: Pokémon dataset/schema files.
-- `data/interpretation-schema.json`: proposed second-layer field definitions.
-- `algorithm/scoring-spec.md`: formulas and implementation requirements.
+## Scoring Framework
 
-## The eight planned scores
+The prototype uses eight categories to evaluate team structure:
 
-1. Role Coverage — 15%
-2. Defensive Coverage — 12%
-3. Offensive Coverage — 12%
-4. Speed Structure — 12%
-5. Archetype Coherence — 12%
-6. Win Conditions — 12%
-7. Pokémon Synergy — 15%
-8. Balance / Redundancy — 10%
+- Type Coverage
+- Defensive Synergy
+- Speed Control
+- Role Balance
+- Physical/Special Balance
+- Archetype Coherence
+- Threat Coverage
+- Core Synergy
 
-These are initial design weights, not empirically validated constants.
+The scoring framework is being refined as the underlying interpretation and optimization systems develop. The overall score represents structural team evaluation, not a prediction of battle outcomes.
 
-## Run locally
+## Data
 
-Open `index.html` in a browser. No build tools are required for the landing page.
+The project uses an objective dataset covering 1,025 Pokémon species, including their types, base stats, abilities, and defensive type matchups.
 
-## Data design principle
+Competitive interpretations, including roles and archetype affinities, are maintained separately from objective data. This distinction allows the system's reasoning to remain transparent and its classifications to be reviewed independently.
 
-Keep **objective facts** (types, stats, abilities, type matchups) separate from **interpretation** (role strengths, functional attributes, archetype affinities). Format legality is format-dependent and should be represented separately. Interpretations are design judgments and need documented rules and review status.
+Format legality is handled separately because restrictions vary across competitive formats and regulations.
+
+## Current Development
+
+- Established the objective Pokémon dataset.
+- Designed the interpretation schema for roles, functional attributes, and archetypes.
+- Developed the initial scoring framework.
+- Built a functional interactive team-builder prototype in Base44, including team selection, optimization, evaluation, reference charts, and team import.
+- Created the GitHub project landing page and algorithm documentation.
+
+The next stage is to complete the competitive interpretation layer, implement and validate the scoring functions, and integrate the optimization engine with the interactive interface.
+
+## Repository Structure
+
+- `index.html`, `style.css`, `script.js` — GitHub project landing page.
+- `data/` — Pokémon dataset and interpretation schema.
+- `algorithm/scoring-spec.md` — Scoring framework, formulas, and implementation specifications.
 
 ## Roadmap
 
-- [x] Define the project and initial architecture
-- [x] Create public landing page and scoring specification
-- [ ] Review interpretation tags and data for all supported Pokémon
-- [ ] Implement and unit-test the eight scoring functions
-- [ ] Implement candidate evaluation and explanations
-- [ ] Build the interactive team builder
-- [ ] Test with manually reviewed example teams
+- [x] Establish the project architecture and objective dataset.
+- [x] Build the public landing page and algorithm specification.
+- [x] Develop the interactive Base44 prototype.
+- [ ] Complete and review Pokémon role and archetype classifications.
+- [ ] Implement and test the scoring functions.
+- [ ] Develop and validate the recommendation engine.
+- [ ] Integrate the optimization engine with the interactive interface.
+- [ ] Evaluate results using manually reviewed teams.
 
-**Project principle: Complex reasoning, simple presentation.**
+**Project Principle: Complex reasoning, simple presentation.**
