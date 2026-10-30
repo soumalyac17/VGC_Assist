@@ -2,9 +2,9 @@
 
 **An explainable, meta-independent Pokémon team optimization system.**
 
-VGC-Assist is an independent project designed to make competitive Pokémon team-building more accessible. It helps players construct and evaluate teams using role-based reasoning, team synergy, and constraint-driven optimization rather than relying primarily on usage statistics.
+VGC-Assist is an independent project designed to help new players learn competitive Pokémon team-building while building teams around Pokémon they enjoy. Instead of relying primarily on usage statistics or simply recommending the most popular choices, it uses role-based reasoning, team synergy, and constraint-driven optimization to help players make their favorites work together and improve their chances of winning.
 
-Its goal is not just to recommend Pokémon, but to explain why they complement a team and how they contribute to its overall structure.
+Beyond suggesting Pokémon, VGC-Assist explains how each addition contributes to a team, helping players understand competitive strategies and make more informed team-building decisions of their own.
 
 ## Features
 
