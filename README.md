@@ -2,11 +2,11 @@
 
 **Meta-independent, explainable Pokémon team optimization system.**
 
-VGC-Assist is an independent project exploring how role-based reasoning and constraint-driven optimization can help players build structurally coherent competitive Pokémon teams. The goal is to explain *why* a Pokémon may help a particular team instead of relying primarily on usage statistics or opaque recommendations.
+VGC-Assist is an independent project exploring how role-based reasoning and constraint-driven optimization can help new players build structurally coherent competitive Pokémon teams. The goal is to explain *why* a Pokémon may help a particular team instead of relying primarily on usage statistics or opaque recommendations.
 
 ## Status
 
-This is an early public project scaffold. The landing page and planning documents are included; the eight scoring functions, candidate optimizer, and finished team-builder interface are **not implemented yet**. Do not treat placeholder data as validated competitive advice.
+This is an early public project scaffold. The landing page and planning documents are included; the eight scoring functions, candidate optimizer, and finished team-builder interface are **not implemented yet**.
 
 ## Core functionality planned
 
@@ -52,14 +52,6 @@ These are initial design weights, not empirically validated constants.
 ## Run locally
 
 Open `index.html` in a browser. No build tools are required for the landing page.
-
-## Publish with GitHub Pages
-
-1. Create a GitHub repository, for example `VGC-Assist`.
-2. Upload the contents of this folder to the repository root.
-3. Open **Settings → Pages**.
-4. Under build/deployment, select **Deploy from a branch**, choose `main` and `/ (root)`, then save.
-5. Use the URL GitHub Pages displays after deployment completes.
 
 ## Data design principle
 
