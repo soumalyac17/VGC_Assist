@@ -8,8 +8,6 @@ Beyond recommending Pokémon, VGC-Assist explains how each addition contributes 
 
 ## Features
 
-The interactive Base44 prototype includes:
-
 - **Team Builder:** Select up to six Pokémon, view their sprites, types, stats, and abilities, and modify individual team slots.
 - **Team Optimization:** Fill empty team slots with recommended Pokémon.
 - **Team Evaluation:** Generate an overall team score and category-level evaluations.
